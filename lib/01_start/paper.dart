@@ -46,9 +46,15 @@ class PaperPainter extends CustomPainter {
       print(size);
     }
     
-    canvas.drawCircle(const Offset(100, 100), 10, _paint);
+    // canvas.drawCircle(const Offset(100, 100), 10, _paint);
+
+    canvas.drawLine(const Offset(0, 0), const Offset(100, 100), _paint);
+
+    _path.moveTo(100, 100);
+    _path.lineTo(200, 0);
+    canvas.drawPath(_path, _paint..color = Colors.red);
   }
 
   @override
-  bool shouldRepaint(CustomPainter oldDelegate) => false;
+  bool shouldRepaint(CustomPainter oldDelegate) => true;
 }
