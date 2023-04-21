@@ -54,33 +54,34 @@ class PaperPainter extends CustomPainter {
     _path.lineTo(200, 0);
     canvas.drawPath(_path, _paint..color = Colors.red);
 
-    _paint
+    final Paint paint = Paint()
         ..color = Colors.blue
         ..style = PaintingStyle.stroke
         ..strokeWidth = 20;
-    canvas.drawLine(const Offset(50 + 100, 50 + 100), const Offset(50 + 100, 150 + 100), _paint..strokeCap = StrokeCap.butt);
-    canvas.drawLine(const Offset(100 + 100, 50 + 100), const Offset(100 + 100, 150 + 100), _paint..strokeCap = StrokeCap.round);
-    canvas.drawLine(const Offset(150 + 100, 50 + 100), const Offset(150 + 100, 150 + 100), _paint..strokeCap = StrokeCap.square);
+    canvas.drawLine(const Offset(50 + 100, 50 + 100), const Offset(50 + 100, 150 + 100), paint..strokeCap = StrokeCap.butt);
+    canvas.drawLine(const Offset(100 + 100, 50 + 100), const Offset(100 + 100, 150 + 100), paint..strokeCap = StrokeCap.round);
+    canvas.drawLine(const Offset(150 + 100, 50 + 100), const Offset(150 + 100, 150 + 100), paint..strokeCap = StrokeCap.square);
 
+    _path.reset();
     _path.moveTo(50, 50);
     _path.lineTo(50, 150);
     _path.relativeLineTo(100, -50);
     _path.relativeLineTo(0, 100);
-    canvas.drawPath(_path, _paint..strokeJoin = StrokeJoin.bevel);
+    canvas.drawPath(_path, paint..strokeJoin = StrokeJoin.bevel);
 
     _path.reset();
     _path.moveTo(50 + 150, 50);
     _path.lineTo(50 + 150, 150);
     _path.relativeLineTo(100, -50);
     _path.relativeLineTo(0, 100);
-    canvas.drawPath(_path, _paint..strokeJoin = StrokeJoin.miter);
+    canvas.drawPath(_path, paint..strokeJoin = StrokeJoin.miter);
 
     _path.reset();
     _path.moveTo(50 + 150 + 150, 50);
     _path.lineTo(50 + 150 + 150, 150);
     _path.relativeLineTo(100, -50);
     _path.relativeLineTo(0, 100);
-    canvas.drawPath(_path, _paint..strokeJoin = StrokeJoin.round);
+    canvas.drawPath(_path, paint..strokeJoin = StrokeJoin.round);
     
   }
 
